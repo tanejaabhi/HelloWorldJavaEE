@@ -70,12 +70,18 @@
 
 			<!-- For Tomcat -->
 			<plugin>
+				
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.2</version>
 				<configuration>
+					<url>http://localhost:8081/manager/text</url>
+					<username>bob</username>
+     				<password>whatever</password>
 					<path>/HelloWorldJavaEE</path>
+					<port>8081</port>
 				</configuration>
+
 			</plugin>
 			
 		<!-- Cobertura plugin -->
@@ -119,13 +125,5 @@
 		      </plugin>
 	    </plugins>
 </reporting>
-	
-<distributionManagement>
-    <snapshotRepository>
-        <id>snapshots</id>
-        <name>devops-training-snapshots</name>
-        <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
-    </snapshotRepository>
-</distributionManagement>	
 	
 </project>
